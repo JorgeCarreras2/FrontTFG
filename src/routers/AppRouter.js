@@ -1,5 +1,5 @@
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from '../pages/HomePage/HomePage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage'
@@ -11,17 +11,17 @@ import PublicRoute from './PublicRoute'
 export default function AppRouter() {
     return (
         <Router>
-            <Switch> 
-                {/*Tener en cuenta que vamos de mas especifica a mas general*/}
-                <PrivateRoute path="/user/:username" component={UserPage}/>
+                    <Switch>
+                        {/*Tener en cuenta que vamos de mas especifica a mas general*/}
+                        <PrivateRoute path="/user/:username" component={UserPage} />
 
-                <PublicRoute exact path="/login" component={LoginPage}/>
-                <PublicRoute exact path="/register" component={RegisterPage}/>
+                        <PublicRoute exact path="/login" component={LoginPage} />
+                        <PublicRoute exact path="/register" component={RegisterPage} />
 
-                <Route exact path="/" component={HomePage}/>
+                        <Route exact path="/" component={LoginPage} />
 
-                <Route path="*" component={NotFoundPage}/>
-            </Switch>
+                        <Route path="*" component={NotFoundPage} />
+                    </Switch>
         </Router>
     );
 }

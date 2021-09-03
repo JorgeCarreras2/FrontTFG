@@ -5,9 +5,9 @@ export const AuthContext = createContext();
 
 const Authprovider = ({ children }) => {
     //Se obtiene de localStorage el usuario, en caso de ser la primera carga se carga null, porque no existe basicamente, no hay que ser un genio
-    const[user,setUser] = useState(
-        JSON.parse(localStorage.getItem("user")) || null  
-    ); 
+    const[user,setUser] = useState(null);
+        //JSON.parse(localStorage.getItem("user")) || null  
+ 
 
      useEffect(()=>{
          try{
