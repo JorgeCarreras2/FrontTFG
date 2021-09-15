@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
 
 export default function UserPage() {
-    const {username} = useParams();
+    const {userId} = useParams();
     return (
         <div>
-            <h1>User page: {username}</h1>
+            <h1>User page: {userId}</h1>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import { Redirect, Route } from "react-router-dom";
 import UseAuth from "../auth/UseAuth";
+import {RoutesConts} from "./RoutesConts";
 
 export default function PublicRoute({ component: Component, ...rest }) {
     const auth = UseAuth();
@@ -9,7 +10,7 @@ export default function PublicRoute({ component: Component, ...rest }) {
         <Route {...rest}>
             {auth.isLogged() ?
                 (
-                    <Redirect to="/"/>
+                    <Redirect to={RoutesConts.userHome()}/>
                 
                 ):(
                     <Component />

@@ -1,7 +1,7 @@
 import { Redirect, Route, useLocation } from "react-router-dom";
 import UseAuth from "../auth/UseAuth";
-
-const user = null;
+import {RoutesConts} from './RoutesConts';
+ 
 export default function PrivateRoute({ component: Component, ...rest }) {
     const auth = UseAuth();
     const location = useLocation();
@@ -13,7 +13,7 @@ export default function PrivateRoute({ component: Component, ...rest }) {
                 (
                     <Component />
                 ):(
-                    <Redirect to={{pathname:"/login" , state:{from:location} }} />
+                    <Redirect to={{pathname:RoutesConts.userHome(), state:{from:location} }} />
                 )}
         </Route>
     );
